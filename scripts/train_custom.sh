@@ -21,6 +21,6 @@ port=$(rand 10000 30000)
 
 timestamp=$(date "+%Y-%m-%d_%H:%M:%S")
 
-python train.py --eval -s ${scene} -m outputs/${scene}/${timestamp} --port ${port} --images ${images} --mode custom -r 4
+python train.py --eval -s ${scene} -m outputs/${scene}/${timestamp} --port ${port} --images ${images} --mode custom -r 4 --pose_iteration 100 --local_iter 200 --global_iter 500
 python render.py -m outputs/${scene}/${timestamp}
 python metrics.py -m outputs/${scene}/${timestamp}

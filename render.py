@@ -208,9 +208,9 @@ def render_sets(dataset : ModelParams, iteration : int, pipeline : PipelineParam
         matcher = Mast3rMatcher()
         
         for idx, viewpoint in enumerate(tqdm(scene.getTestCameras(), desc="Processing test cameras")):
-            if "hike_dataset" in dataset.model_path:
+            if "hike" in dataset.model_path:
                 test_frame_every = 10
-            elif "Tanks" in dataset.model_path:
+            elif "tanks" in dataset.model_path:
                 test_frame_every = 2 if "Family" in dataset.model_path else 8
             else:
                 test_frame_every = 8
